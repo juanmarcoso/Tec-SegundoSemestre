@@ -18,3 +18,39 @@ for nombre in nombres:
     print(nombre)
 else:
     print('Se acabaron los nombres')
+    
+# Preguntamos cuantos elementos tiene una lista
+#print(nombres)
+print(len(nombres)) # Le pasamos como parametro el nombre de la lista
+
+# Agregamos un elemento
+nombres.append("Marcelo") # Se agrega al final
+print(nombres)
+
+# insertar un indice especifico
+nombres.insert(1, "Alberto")
+print(nombres)
+nombres.insert(3, "Debora")
+print(nombres)
+
+#eliminamos un elemento de nuestra lista
+nombres.remove("Alberto")
+print(nombres)
+
+# Eliminar el ultimo elemento de la lista
+nombres.pop()
+print(nombres)
+
+# Eliminar un indice especifico
+del nombres[2]
+print(nombres)
+del nombres[-1]
+print(nombres)
+
+# Eliminar, borrar o limpiar todos los elementos 
+nombres.clear()
+print(nombres)
+
+# Eliminar la lista 
+del nombres
+print(nombres)
