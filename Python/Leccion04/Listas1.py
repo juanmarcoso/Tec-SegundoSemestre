@@ -53,4 +53,4 @@ print(nombres)
 
 # Eliminar la lista 
 del nombres
-print(nombres)
+#print(nombres)
