@@ -29,5 +29,37 @@ public class EjercicioWhile01 {
         for( var contando = 0; contando < 7; contando++ ){
             System.out.println("contando = " + contando);
         }
+        
+        System.out.println("");
+        System.out.println("Ahora veremos for con break");
+        
+        for( var conta = 0; conta < 7; conta++ ){
+            if (conta % 2 == 0){
+                System.out.println("conta = " + conta);
+                break; // Si no le colocamos la palabra reservada "break", va a imprimir todos los numeros pares
+            }
+        }
+        
+        System.out.println("");
+        System.out.println("Ahora veremos for con continue");
+        
+        for (var contar = 0; contar < 7; contar++ ){ 
+            if(contar % 2 != 0){ //Entr al ciclo if cuando es impar
+                continue; // Vamos a la siguiente iteracion
+            }
+            System.out.println("contar = " + contar);
+        }
+        
+        //Uso de las palabras break y continue junto con las etiquetas (labels).
+        System.out.println("");
+        System.out.println("Ahora veremos etiquetas Labels");
+        
+        inicio: // Se trabaja mas eficientemente en los ciclos anidados. Aqui es redundante
+        for( var conte = 0; conte < 7; conte++ ){
+            if (conte % 2 == 0){
+                System.out.println("conta = " + conte);
+                break inicio; 
+            }
+        }
     }
 }
