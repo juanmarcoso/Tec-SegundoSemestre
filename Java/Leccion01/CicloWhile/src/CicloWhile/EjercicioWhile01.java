@@ -50,7 +50,7 @@ public class EjercicioWhile01 {
             System.out.println("contar = " + contar);
         }
         
-        //Uso de las palabras break y continue junto con las etiquetas (labels).
+        //Uso de la etiqueta (labels).
         System.out.println("");
         System.out.println("Ahora veremos etiquetas Labels");
         
