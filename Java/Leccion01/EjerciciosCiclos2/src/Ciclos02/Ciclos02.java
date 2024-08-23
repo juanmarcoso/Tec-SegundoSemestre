@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Ciclos02 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        int num, negativo, positivo;
+        int num;
         
         System.out.println("Ingrese un numero");
         num = Integer.parseInt(entrada.nextLine());
