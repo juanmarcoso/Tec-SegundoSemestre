@@ -20,13 +20,14 @@ public class EjercioScanner03 {
         
         while (num != 0) {
             if (num % 2 == 0){
-                System.out.println("Es par");
+                System.out.println("El numero " + num + " par");
             }
             else {
-                System.out.println("Es impar");
+                System.out.println("El numero " + num + " impar");
             }
             System.out.println("Ingrese otro numero");
             num = Integer.parseInt(teclado.nextLine());
         }
+        System.out.println("El numero ingresado es " + num + " finaliza el programa");
     }   
 }

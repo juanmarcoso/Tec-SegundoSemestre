@@ -16,6 +16,7 @@ public class EjercicioJOption04 {
         num = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un numero: "));
         
         while (num >= 0) {
+            JOptionPane.showMessageDialog(null, "El numero " + num + " es positivo");
             num = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese otro numero: "));
             contador++;
         }

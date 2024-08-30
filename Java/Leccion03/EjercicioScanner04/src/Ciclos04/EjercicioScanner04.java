@@ -17,11 +17,11 @@ public class EjercicioScanner04 {
         int contador = 0;
 
         while (num >= 0) {
-            System.out.println("Ingrese otro numero");
-            num = Integer.parseInt(teclado.nextLine());
+            System.out.println("El numero "+ num + " es positivo. Ingrese otro numero");
+            num = Integer.parseInt(teclado.nextLine()); 
             contador++;
         }
-        System.out.println("Ingreso " + contador + " numeros");
+        System.out.println("Ingreso " + contador + " numeros positivos.");
     }
 
 }
