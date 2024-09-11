@@ -45,8 +45,100 @@ console.log(resultado);
 
 })(9, 6);
 
-//ste código define y ejecuta inmediatamente una función anónima que toma dos argumentos, 
+// Este código define y ejecuta inmediatamente una función anónima que toma dos argumentos, 
 // los suma, y luego imprime el resultado en la consola. 
 // El uso de una IIFE es común en JavaScript para evitar la contaminación del espacio de nombres global 
 // y para crear un contexto local que no interfiera con otras partes del código.
 
+// ---------- Metodo arguments y toString ------------------------
+// Una función es un tipo de dato. 
+// En este video vemos el método arguments y el método toString. 
+// Las funciones pueden ser descriptas como objetos. 
+// -->> "Arguments" sólo puede utilizarse dentro del bloque de la función, 
+// el método -->> "toString" es un método que nos permite comprobar que las funciones puden ser descriptas 
+// como objetos, convierte a la función en texto. 
+// Hay que recordar que función y método son exáctamente lo mismo 
+
+console.log(typeof miFuncion);
+
+function miFuncionDos(a, b){
+    console.log(arguments. length); // La propiedad de "arguments" es un array
+}
+
+miFuncionDos(5, 7);
+
+// toString
+var miFuncionTexto = miFuncionDos.toString();
+console.log(miFuncionTexto); // Convierte la funcion en texto
+
+// Funciones flecha. Arrow functions, son una sintaxis más concisa para escribir funciones anónimas.
+const sumarFuncionFlecha = (a, b) => a + b;
+resultado = sumarFuncionFlecha(3, 7);
+console.log(resultado)
+
+// Argumentos, valores que pasamos cuando llamamos a una funcion
+// La funcion se puede llamar como objeto
+
+// Funcion de tipo expresion
+let sumar = function(a = 4, b = 8){
+    console.log(arguments[0]); // Muestra el parametro de a: 
+    console.log(arguments[1]); // Muestra el parametro de b:
+    // console.log(arguments[2]); // Esto lo puedo agregar al return
+
+    return a + b + arguments[2];
+}
+
+resultado2 = sumar(3, 6, 7); // En JavaScript no es necesario que coincida el numero de argumentos con el numero de parametros
+console.log(resultado2);
+
+// Ahora veremos de sumar todo aplicando el concepto de hosting
+let respuesta = sumarTodo(5, 4, 13, 10, 9);
+console.log(respuesta);
+function sumarTodo(){
+    let suma = 0;
+    for (let i = 0; i < arguments.length; i++){
+        suma += arguments[i]; // "Arguments" es para arreglos
+    }
+    return suma;
+}
+
+// Paso por valor y paso por referencia
+// Al asignar un valor numerico a una variable, lo entendemos como valor primitivo, ya que no tiene ni propiedades ni metodos
+
+// Tipos primitivos 
+let k = 10;
+function cambiarValor(a){
+    a = 20; // Aqui tenemos otra variable en otro espacio de memoria
+}
+
+cambiarValor(k);
+console.log(k); // Paso por valor, pasamos la variable K por la funcion pero fue solo una copia
+
+// Paso por referencia
+// Vamos a tener que crear un objeto, porque se le puede asociar y agregar propiedades
+
+// Paso por Referencia: Se refiere a cuando pasas un objeto (o un array) a una función. 
+// La función puede modificar el objeto original porque está trabajando con una referencia al objeto en la memoria.
+// El paso por referencia es una característica poderosa en JavaScript, 
+// especialmente cuando trabajas con objetos complejos y necesitas que las funciones modifiquen esos objetos directamente.
+
+// Paso por Valor: Ocurre con tipos de datos primitivos como números y cadenas, donde la función recibe una copia del valor, 
+// y cualquier modificación dentro de la función no afecta el valor original.
+
+const persona = {
+    nombre: "Juan",
+    apellido: "Lepez"
+}
+
+console.log(persona);
+
+function cambiarValorObjeto(p1){
+    // Esta funcion va a pasar un valor hexadecimal. 
+    // 'p1' va a estar llamando al objeto persona dentro de un espacio de memoria determinado
+    // A traves de la variable p1 accedemos a los atributos de la funcion
+    p1.nombre = 'Ignacio';
+    p1.apellido = 'Perez';
+}
+
+cambiarValorObjeto(persona);
+console.log(persona);
