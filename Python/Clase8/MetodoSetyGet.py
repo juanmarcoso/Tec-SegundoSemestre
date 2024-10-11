@@ -44,14 +44,20 @@ class Persona2:
         print('Estamos utilizando el metodo set')
         self._edad = edad
         
-# Ahora vamos a mostrar 
-persona1 = Persona2('Juan', 'Orellana', 40)
-print(persona1.nombre) # Aqui llamamos al metodo getter
+    def __del__(self):
+        print(f"Persona2: {self._nombre} {self._apellido} {self._edad}")
 
-persona1.nombre = 'Ariel Salinas' # Aqui utilizamos el metodo set
-print(persona1.nombre)
+if __name__ == '__main__':        
+    # Ahora vamos a mostrar 
+    persona1 = Persona2('Juan', 'Orellana', 40)
+    print(persona1.nombre) # Aqui llamamos al metodo getter
 
-print(persona1.mostrar_detalles())
+    persona1.nombre = 'Ariel Salinas' # Aqui utilizamos el metodo set
+    print(persona1.nombre)
 
-persona1.edad = 41 #Si no estuviera el metodo setter de este atributo no se podria modificar Quedaria como un atrinuto read-only por lo que no tiene el metodo set
-print(persona1.edad)
+    print(persona1.mostrar_detalles())
+
+    persona1.edad = 41 #Si no estuviera el metodo setter de este atributo no se podria modificar Quedaria como un atrinuto read-only por lo que no tiene el metodo set
+    print(persona1.edad)
+
+    print(__name__)
