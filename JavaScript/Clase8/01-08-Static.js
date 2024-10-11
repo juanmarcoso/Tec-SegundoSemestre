@@ -1,11 +1,21 @@
 class Persona{ 
 
-    static contadorObjetosPersona = 0;
+    static contadorPersona = 0; // Atributo estatico
+    // email = 'Valor default email'; // Atributo no estatico
+
+    static get MAX_OBJ(){ //Metodo que va a simular una constante
+        return 5;
+    }
 
     constructor(nombre, apellido) { 
         this._nombre = nombre;
         this._apellido = apellido;
-        Persona.contadorObjetosPersona ++;
+        if(Persona.contadorPersona < Persona.MAX_OBJ){
+            this.idPersona = ++ Persona.contadorPersona;
+        }else{
+            console.log('Se ha superado el maximo de objetos permitidos');
+        }
+        
         /*
         * Incremento del contador: Cada vez que se crea una nueva instancia de Persona, dentro del constructor, se incrementa el valor de 
         contadorObjetosPersona usando Persona.contadorObjetosPersona++. Esto lleva un control de cuántas instancias de Persona se han 
@@ -14,7 +24,7 @@ class Persona{
         creado.
         * Los métodos estáticos son llamados desde la clase, no desde las instancias.
         */
-        console.log('Se incrementa el contador: ' + Persona.contadorObjetosPersona)
+        //console.log('Se incrementa el contador: ' + Persona.contadorObjetosPersona)
     }
 
     // Método getter para obtener el nombre
@@ -38,7 +48,7 @@ class Persona{
     }
 
     nombreCompleto(){
-        return this._nombre + " " + this._apellido;
+        return this.idPersona + ' ' + this._nombre + " " + this._apellido;
     }
     // Sobreescribimos el metodo de la clase padre (Object)
     toString(){ 
@@ -103,3 +113,27 @@ Empleado.saludar2(empleado1);
 console.log(Persona.contadorObjetosPersona);
 // Desde la clase hija lo llamamos
 console.log(Empleado.contadorObjetosPersona);
+
+// Atributo estatico se asocia a la clase en si 
+// Atributo estatico se asocia solo a los objetos
+console.log(persona1.email);
+// Accediendo al objeto de la clase hija
+console.log(empleado1.email);
+// console.log(Persona.email); // No es estatico, no se puede acceder desde la clase en si
+console.log(empleado1.toString())
+console.log(persona1.toString())
+console.log(Persona.contadorPersona)
+
+let persona3 = new Persona('Carla', 'Pertosi')
+console.log(persona3.toString())
+console.log(Persona.contadorPersona)
+
+console.log(Persona.MAX_OBJ);
+//Persona.MAX_OBJ = 10; // No se puede modificar, ni alterar
+
+let persona4 = new Persona('Juan', 'Orellana')
+console.log(persona4.toString())
+let persona5 = new Persona('Ariel', 'Salinas')
+console.log(persona5.toString())
+let persona6 = new Persona('Romina', 'Ojeda')
+console.log(persona6.toString())
