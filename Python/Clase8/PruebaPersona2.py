@@ -7,5 +7,6 @@ if __name__ == '__main__':
 
     print(__name__)# Metodo de comprobacion 
     
+# "Destructor de objetos"    
 print(' Eliminacion de objetos '.center(60, '-'))
 del persona5
