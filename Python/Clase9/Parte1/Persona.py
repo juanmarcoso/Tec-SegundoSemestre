@@ -1,8 +1,8 @@
 class Persona:
     
     def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
+        self._nombre = nombre
+        self._edad = edad
         
     @property
     def nombre(self):
