@@ -38,7 +38,7 @@ public class PruebaAritmetica {
         Persona persona = new Persona("Juan", "Orellana");
         System.out.println("persona = " + persona);
         System.out.println("Persona nombre = " + persona.nombre);
-        System.out.println("\"Persona apellido = " + persona.apellido);
+        System.out.println("Persona apellido = " + persona.apellido);
     }
     
     // modularidad, creamos otro metodo
