@@ -57,9 +57,24 @@ class Persona{
     String nombre;
     String apellido;
 
-    Persona(String nombre, String apellido){
+    Persona(String nombre, String apellido){ //Constructor
+        super(); //Llamada al constructor de la clase Padre object
+        //Imprimir imprimir = new Imprimir(); //Creamos un objeto
+        new Imprimir().imprimir(this);
         // this.nombre = nombre es el punto de memoria donde esta guardado-
         this.nombre = nombre; //this apunta al atributo, es para que el compilador sepa diferenciar el atributo de la variable
         this.apellido = apellido; // Para utilizar la variable igual al identificador de la variable le asignamos con un this
+        System.out.println("Objeto persona usando this: " + this);
+    }
+}
+
+class  Imprimir{
+    public Imprimir(){
+        super(); //El constructor de la clase padre para reservar memoria
+    }
+    
+    public void imprimir(Persona persona){ //Metodo dentro de la clase imprimir
+        System.out.println("Persona desde la clase imprimir "+ persona);
+        System.out.println("Impresion del objeto actual (this): "+ this);
     }
 }
