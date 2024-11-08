@@ -34,5 +34,9 @@ public class PruebaPersona {
         System.out.println("El nombre nuevo del objeto2 es: " + persona2.getNombre());
         System.out.println("El sueldo nuevo del objeto2 es: " + persona2.getSueldo());
         System.out.println("El booleano nuevo del objeto2 es: " + persona2.isEliminado());
+        
+        //Llamamos al metodo toString()
+        System.out.println("persona1 = " + persona1.toString());
+        System.out.println("persona2 = " + persona2);
     }
 }
