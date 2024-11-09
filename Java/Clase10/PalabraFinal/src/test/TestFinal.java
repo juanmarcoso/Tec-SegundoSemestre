@@ -31,7 +31,8 @@ public class TestFinal {
         persona1.setNombre("Juan");
         System.out.println("persona1 = " + persona1.getNombre());
         persona1.setNombre("Liliana");
-        System.out.println("persona1 = " + persona1.getNombre());
+        System.out.println("persona1 = " + persona1.getNombre()); //Se puede modificar su valor pero NO hacer una nueva referencia
+       
     }
     
 }
